@@ -1,114 +1,99 @@
 <!DOCTYPE html>
 <html lang='en'>
- <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MoEr Parties</title>
-  <meta charset='utf-8'>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <!-- Importing a newspaper-like font -->
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <title>MoEr Parties</title>
+    <meta charset='utf-8'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Importing a newspaper-like font -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-      body {
-          font-family: 'PT Serif', serif;
-          background-color: #f5f3e7;
-          margin: 40px;
-      }
+    <style>
+        body {
+            font-family: 'PT Serif', serif;
+            background-color: #f5f3e7;
+            margin: 40px;
+        }
 
-      .newspaper {
-          max-width: 1200px;
-          margin: auto;
-          background-color: white;
-          padding: 40px;
-          box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
-      }
+        .newspaper {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+        }
 
-      .header {
-          text-align: left;
-          font-size: 48px;
-          font-weight: bold;
-          margin-bottom: 30px;
-          border-bottom: 5px solid #333;
-          padding-bottom: 10px;
-      }
+        .header {
+            text-align: left;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-bottom: 5px solid #333;
+            padding-bottom: 10px;
+        }
 
-      .content {
-          display: flex;
-          justify-content: space-between;
-      }
+        .section {
+            padding: 20px;
+            border-bottom: 2px solid #333;
+        }
 
-      .section {
-          flex: 1;
-          padding: 20px;
-          column-gap: 20px;
-      }
+        .middle-section {
+            display: flex;
+            justify-content: space-between;
+        }
 
-      .middle-section {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-      }
+        .middle-section .half {
+            flex: 1;
+            padding: 20px;
+        }
 
-      .middle-section .half {
-          flex: 1;
-          border-top: 2px solid #333;
-          padding-top: 20px;
-      }
+    </style>
+</head>
+<body>
 
-  </style>
- </head>
- <body>
-    
 <div class="newspaper">
     <div class="header">
-        The MoEr Wedding and Halloween Bash
+        The MoEr Halloween
     </div>
 
-    <div class="content">
+    <!-- Top Section -->
+    <div class="section">
+        <h2>Halloween Bash</h2>
+        <p>
+            In the spirit of Hive-O-ween where we first danced together in 2014, we're throwing a party at our home on <strong>September 28th, 2023</strong>.
+        </p>
+        <div class="address">
+            1634 Sanchez St.<br>
+            San Francisco, CA 94131<br>
+            Email: erin@moer.party OR mohit@moer.party
+        </div>
+    </div>
 
-        <!-- Left Section -->
-        <div class="section">
-            <h2>Halloween Bash</h2>
+    <!-- Middle Section -->
+    <div class="middle-section">
+        <div class="half">
+            <h2>Wedding Ceremony</h2>
             <p>
-                In the spirit of Hive-O-ween where we first danced together in 2014, we're throwing a party at our home on <strong>September 28th, 2023</strong>.
-                <div class="address">
-                1634 Sanchez St.<br>
-                San Francisco, CA 94131<br>
-                Email: erin@moer.party or mohit@moer.party
-            </div>
-
+                <strong>Mayor's Balcony at San Francisco City Hall</strong>
+                <br/>Tuesday, October 31.
             </p>
         </div>
-
-        <!-- Middle Section -->
-        <div class="section middle-section">
-            <div class="half">
-                <h2>Wedding Ceremony</h2>
-                <p>
-                    <strong>Mayor's Balcony at San Francisco City Hall</strong>
-                    <br/>Tuesday, October 31.
-                </p>
-            </div>
-            <div class="half">
-                <h2>Dinner</h2>
-                <strong>Foreign Cinema</strong>
-                <br/>Tuesday, October 31
-                <p>
-                    
-                </p>
-            </div>
+        <div class="half">
+            <h2>Dinner</h2>
+            <strong>Foreign Cinema</strong>
+            <br/>Tuesday, October 31
+            <p></p>
         </div>
+    </div>
 
-        <!-- Right Section -->
-        <div class="section">
-            <h2>Section 3</h2>
-            <p>
-                Content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut semper nulla, sit amet laoreet est.
-            </p>
-        </div>
-
+    <!-- Bottom Section -->
+    <div class="section">
+        <h2>Section 3</h2>
+        <p>
+            Content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut semper nulla, sit amet laoreet est.
+        </p>
     </div>
 </div>
- </body>
+
 </html>
