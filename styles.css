@@ -3,56 +3,298 @@ body {
     font-family: 'PT Serif', serif;
     background-color: #f5f3e7;
     margin: 40px;
+    color: #333;
+    line-height: 1.6;
 }
 
 .newspaper {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     background-color: white;
     padding: 40px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
 }
 
+/* Masthead styling - more prominent newspaper header */
 .header {
-    text-align: left;
-    font-size: 48px;
+    text-align: center;
+    font-size: 54px;
     font-weight: bold;
-    margin-bottom: 30px;
-    border-bottom: 5px solid #333;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px double #333;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+/* Column layout enhancement */
 .section {
     padding: 20px;
-    border-bottom: 2px solid #333;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+    position: relative;
 }
 
+/* Enhance section headings with newspaper style */
+.section h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #888;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+/* Multi-column middle section styling */
 .middle-section {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
 }
 
 .middle-section .half {
     flex: 1;
     padding: 20px;
+    position: relative;
 }
 
-/* Styling for the bottom section */
+/* Add vertical separator between columns */
+.middle-section .half:first-child {
+    border-right: 1px solid #888;
+}
+
+/* Map section newspaper styling */
+.map-container {
+    margin: 20px 0;
+    padding: 4px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+.map-container iframe {
+    display: block;
+}
+
+.map-caption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9em;
+}
+
+/* Bottom section styling */
 .section:last-child {
     text-align: center;
+    border-bottom: none;
+    padding-top: 30px;
 }
 
 .section:last-child h2 {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 22px;
+    border-bottom: none;
+    display: inline-block;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 5px 15px;
 }
 
 .section:last-child p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    margin-top: 15px;
 }
 
 .section:last-child a {
     color: #333;
     text-decoration: underline;
+}
+
+/* RSVP button styling with newspaper flair */
+button.rsvp-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    margin: 20px auto;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button.rsvp-button:hover {
+    background-color: #555;
+}
+
+button.rsvp-button::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid #333;
+    pointer-events: none;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+button.rsvp-button:hover::after {
+    top: 2px;
+    left: 2px;
+    right: -2px;
+    bottom: -2px;
+}
+
+/* Specific styling for the map section */
+.map-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+}
+
+.map-section h2 {
+    text-align: center;
+}
+
+.map-section a {
+    display: inline-block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #333;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-family: 'PT Serif', serif;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Form styles with newspaper flair */
+.form-group {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 15px;
+}
+
+.form-group:last-child {
+    border-bottom: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: 'PT Serif', serif;
+    box-sizing: border-box;
+    background-color: #fafafa;
+}
+
+.radio-group {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+button.submit-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.success-message {
+    display: none;
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive adjustments for newspaper layout */
+@media (max-width: 768px) {
+    .middle-section {
+        flex-direction: column;
+    }
+    
+    .middle-section .half {
+        border-right: none !important;
+        border-bottom: 1px solid #888;
+    }
+    
+    .middle-section .half:last-child {
+        border-bottom: none;
+    }
+    
+    .header {
+        font-size: 40px;
+    }
+    
+    body {
+        margin: 20px;
+    }
+    
+    .newspaper {
+        padding: 20px;
+    }
 }
