@@ -1,117 +1,37 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoEr Parties</title>
-    <meta charset='utf-8'>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Importing a newspaper-like font -->
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // Update this to add logic to fall back to the most recent available year
+        const currentYear = new Date().getFullYear();
+        const availableYears = [2023, 2025];
+        let targetYear = currentYear;
 
-    <style>
-        body {
-            font-family: 'PT Serif', serif;
-            background-color: #f5f3e7;
-            margin: 40px;
+        // If current year isn't available, use the most recent one
+        if (!availableYears.includes(currentYear)) {
+            // Find the largest year that's less than or equal to the current year
+            const validYears = availableYears.filter(year => year <= currentYear);
+            if (validYears.length > 0) {
+                targetYear = Math.max(...validYears);
+            } else {
+                // If all years are in the future, use the smallest one
+                targetYear = Math.min(...availableYears);
+            }
         }
 
-        .newspaper {
-            max-width: 800px;
-            margin: auto;
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            text-align: left;
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            border-bottom: 5px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .section {
-            padding: 20px;
-            border-bottom: 2px solid #333;
-        }
-
-        .middle-section {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .middle-section .half {
-            flex: 1;
-            padding: 20px;
-        }
-
-        /* Styling for the bottom section */
-        .section:last-child {
-            text-align: center;
-        }
-
-        .section:last-child h2 {
-            margin-top: 0;
-            font-size: 2rem;
-        }
-
-        .section:last-child p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-
-        .section:last-child a {
-            color: #333;
-            text-decoration: underline;
-        }
-
-    </style>
+        window.location.href = targetYear + ".html";
+    </script>
 </head>
 <body>
-
-<div class="newspaper">
-    <div class="header">
-        The MoEr Halloween Bash
-    </div>
-
-    <!-- Top Section -->
-    <div class="section">
-        <h2>Halloween Bash</h2>
-        <p>
-            In the spirit of Hive-O-ween where we first danced together in 2014, we're throwing a party at our home on <strong>October 28th, 2023 at 7pm</strong>.
-        </p>
-        <div class="address">
-            1634 Sanchez St.<br>
-            San Francisco, CA 94131<br>
-        </div>
-    </div>
-
-    <!-- Middle Section -->
-    <div class="middle-section">
-        <div class="half">
-            <h2>Family Wedding Ceremony</h2>
-            <p>
-                <strong>Mayor's Balcony at San Francisco City Hall</strong>
-                <br/>Tuesday, October 31.
-            </p>
-        </div>
-        <div class="half">
-            <h2>Family Dinner</h2>
-            <strong>Foreign Cinema</strong>
-            <br/>Tuesday, October 31
-            <p></p>
-        </div>
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="section">
-        <h2>🏞️ 🥰 🚴🏽‍♀️ </h2>
-        <p>
-            <a href="mailto:erin@moer.party">erin@moer.party</a> OR <a href="mailto:mohit@moer.party">mohit@moer.party</a>
-        </p>
-    </div>
-</div>
-</html>
+    <p>Redirecting to the current year's page...</p>
+    <p>If you are not redirected automatically, <a id="yearLink" href="2025.html">click here</a>.</p>
+    
+    <script>
+        // Also update the fallback link
+        document.getElementById('yearLink').href = currentYear + ".html";
+    </script>
+</body>
+</html> 
