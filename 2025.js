@@ -78,3 +78,97 @@ form.addEventListener('submit', function(e) {
     })
     .catch(error => console.error('Error!', error.message));
 }); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Array of image paths - update these with your actual image filenames
+    const images = [
+        'images/rainshadowParty1Of5.jpeg',
+        'images/rainshadowParty2Of5.jpeg',
+        'images/rainshadowParty3Of5.jpeg',
+        'images/rainshadowParty4Of5.jpeg',
+        'images/rainshadowParty5Of5.jpeg'
+    ]; 
+    
+    const gallery = document.getElementById('photoGallery');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const currentImageNum = document.getElementById('currentImageNum');
+    const totalImages = document.getElementById('totalImages');
+    let currentIndex = 0;
+
+    // Populate the total images count
+    totalImages.textContent = images.length;
+
+    // Create image elements and add to gallery
+    images.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Gallery image ${index + 1}`;
+        img.className = index === 0 ? 'active' : '';
+        gallery.appendChild(img);
+    });
+
+    // Function to show the current image
+    function showImage(index) {
+        const allImages = gallery.querySelectorAll('img');
+        allImages.forEach(img => img.classList.remove('active'));
+        allImages[index].classList.add('active');
+        currentImageNum.textContent = index + 1;
+        
+        // Preload the next image for smoother transitions
+        preloadNextImage(index);
+    }
+    
+    // Preload next image
+    function preloadNextImage(currentIndex) {
+        const nextIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        const preloadImg = new Image();
+        preloadImg.src = images[nextIndex];
+    }
+
+    // Event listeners for navigation buttons
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        showImage(currentIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        showImage(currentIndex);
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    gallery.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    gallery.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left - show next image
+            nextButton.click();
+        } else if (touchEndX > touchStartX + 50) {
+            // Swipe right - show previous image
+            prevButton.click();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') {
+            prevButton.click();
+        } else if (e.key === 'ArrowRight') {
+            nextButton.click();
+        }
+    });
+    
+    // Initialize the gallery with the first image
+    showImage(0);
+});
