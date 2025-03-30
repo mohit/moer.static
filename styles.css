@@ -16,40 +16,40 @@ body {
     border: 1px solid #ddd;
 }
 
-/* Masthead styling - more prominent newspaper header */
+/* Masthead styling - prominent newspaper header */
 .header {
     text-align: center;
     font-size: 54px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 3px double #333;
     padding-bottom: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-/* Column layout enhancement */
+/* Clean section styling without excessive borders */
 .section {
     padding: 20px;
-    margin-bottom: 40px;
     position: relative;
 }
 
-/* Enhance section headings with newspaper style */
+/* Newspaper style headings */
 .section h2 {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 1px solid #888;
     padding-bottom: 8px;
-    margin-bottom: 18px;
+    display: inline-block;
 }
 
-/* Multi-column middle section styling */
+/* Two-column middle section */
 .middle-section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
 .middle-section .half {
@@ -58,16 +58,15 @@ body {
     position: relative;
 }
 
-/* Add vertical separator between columns */
+/* Subtle separator between columns */
 .middle-section .half:first-child {
-    border-right: 1px solid #888;
+    border-right: 1px solid #ddd;
 }
 
-/* Map section newspaper styling */
+/* Map styling */
 .map-container {
     margin: 20px 0;
     padding: 4px;
-    border: 1px solid #ddd;
     background-color: #fafafa;
 }
 
@@ -80,45 +79,25 @@ body {
     text-align: center;
     margin-top: 8px;
     font-size: 0.9em;
+    color: #666;
 }
 
-/* Bottom section styling */
-.section:last-child {
-    text-align: center;
-    border-bottom: none;
-    padding-top: 30px;
-}
-
-.section:last-child h2 {
-    margin-top: 0;
-    font-size: 22px;
-    border-bottom: none;
-    display: inline-block;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    padding: 5px 15px;
-}
+/* Special styling for the last section */
 
 .section:last-child p {
     font-size: 1.1rem;
     margin-top: 15px;
 }
 
-.section:last-child a {
-    color: #333;
-    text-decoration: underline;
-}
-
-/* RSVP button styling with newspaper flair */
 button.rsvp-button {
     background-color: #333;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 12px 12px;
     font-size: 18px;
     cursor: pointer;
     font-family: 'PT Serif', serif;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
     position: relative;
     transition: all 0.3s;
@@ -150,16 +129,21 @@ button.rsvp-button:hover::after {
     bottom: -2px;
 }
 
-/* Specific styling for the map section */
+/* Map section styling */
 .map-section {
-    background-color: #f8f8f8;
     padding: 20px;
     border: 1px solid #ddd;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .map-section h2 {
     text-align: center;
+    border-bottom: none;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0 auto 20px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
 }
 
 .map-section a {
@@ -269,7 +253,7 @@ button.submit-button {
     font-style: italic;
 }
 
-/* Responsive adjustments for newspaper layout */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .middle-section {
         flex-direction: column;
@@ -277,7 +261,7 @@ button.submit-button {
     
     .middle-section .half {
         border-right: none !important;
-        border-bottom: 1px solid #888;
+        border-bottom: 1px solid #ddd;
     }
     
     .middle-section .half:last-child {
@@ -295,12 +279,17 @@ button.submit-button {
     .newspaper {
         padding: 20px;
     }
+    
+    .section h2 {
+        display: block;
+        text-align: center;
+    }
 }
 
 /* Photo Gallery Section */
 .gallery-container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     position: relative;
 }
 
@@ -309,8 +298,6 @@ button.submit-button {
     height: 400px;
     overflow: hidden;
     position: relative;
-    background-color: #f5f5f5;
-    border-radius: 8px;
 }
 
 .gallery img {
@@ -334,17 +321,17 @@ button.submit-button {
 
 .gallery-controls button {
     padding: 8px 16px;
-    background-color: #4a4a4a;
+    background-color: #333;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    font-family: 'PT Serif', serif;
     transition: background-color 0.3s;
 }
 
 .gallery-controls button:hover {
-    background-color: #3a3a3a;
+    background-color: #555;
 }
 
 .gallery-caption {
