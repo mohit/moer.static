@@ -39,7 +39,8 @@
             <p>
                 <strong>Arrival Times:</strong><br>
                 Farm Tour: 5-5:15pm on Saturday, July 19th<br>
-                Main Event: 5:30-6pm on Saturday, July 19th
+                Main Event: 5:30-6pm on Saturday, July 19th<br>
+                Dancing ends at 10pm
             </p>
             <p>
                 <strong>Dress Code:</strong><br>
@@ -52,7 +53,7 @@
             <p>
                 <strong>Closest Airport:</strong><br>
                 Redmond/Bend<br>
-                Direct flights from San Francisco, LA, Portland, and Seattle
+                Direct flights from San Francisco, LA, Seattle, Portland, Denver, Phoenix, Salt Lake City, and Las Vegas
             </p>
             <p>
                 <strong>Recommended Areas:</strong><br>
@@ -62,7 +63,7 @@
             <p>
                 <strong>Local Recommendations:</strong><br>
                 We love Central Oregon and can recommend things to do!<br>
-                We'll send recommendations as the date gets closer.
+                We'll send suggestions as the date gets closer.
             </p>
         </div>
     </div>
@@ -71,7 +72,6 @@
     <div class="section">
         <h2>Additional Information</h2>
         <p>
-            <strong>Dinner:</strong> A delicious farm-to-table meal for adults, pizza from a friend of the farm for kids<br>
             <strong>Weather:</strong> Bring layers - it cools off in the evening<br>
             <strong>Mosquitos:</strong> Bug spray will be provided after sunset<br>
             <strong>Dietary Restrictions:</strong> Please inform us in advance - no day-of accommodations available
@@ -153,7 +153,19 @@
             <div class="form-group">
                 <label for="dietaryRestrictions">If anyone in your group has any dietary needs, please provide their name and food restrictions:</label>
                 <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="4"></textarea>
-                <small>Please note, Rainshadow will not be able to accommodate dietary restrictions day-of the event. Dinner will be a delicious farm-to-table meal. For all kids, we are ordering pizza from a friend of the farm.</small>
+                <small>Please note, Rainshadow will not be able to accommodate dietary restrictions day-of the event. Dinner will be a delicious farm-to-table meal. Kids will have their own tasty menu.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Would you want to take a shuttle to and from downtown Bend? Leaving at 4pm Saturday and getting back at 11pm.</label>
+                <div class="radio-group">
+                    <input type="radio" id="shuttle-yes" name="wantShuttle" value="Yes">
+                    <label for="shuttle-yes">Yes</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="shuttle-no" name="wantShuttle" value="No">
+                    <label for="shuttle-no">No</label>
+                </div>
             </div>
             
             <div class="form-group">
@@ -165,6 +177,7 @@
                 <label for="songRequest">What's a song that will get you on the dance floor?</label>
                 <input type="text" id="songRequest" name="songRequest">
             </div>
+            
             
             <button type="submit" class="submit-button">Submit RSVP</button>
         </form>
