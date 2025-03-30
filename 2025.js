@@ -47,7 +47,7 @@ form.addEventListener('submit', function(e) {
     }
     
     // Google Apps Script URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwcxI8ydtw9EicaCi1Ntf6QxNxVvzNmZape2q2Q2QN01Notcrvf2ZEzjqJN28eCbf3W/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyloAT9mlnH_NQYvtrz5wxSW1cafVg4X_3QOk79WIUWmWgD_M5RkefmcsBBcj1oyLX0/exec';
     
     // Send data to Google Sheets via fetch API
     fetch(scriptURL, {
