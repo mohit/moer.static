@@ -240,6 +240,23 @@ button.submit-button {
     font-family: 'PT Serif', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    position: relative;
+}
+
+button.submit-button:disabled::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .success-message {

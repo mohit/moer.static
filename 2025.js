@@ -46,6 +46,11 @@ form.addEventListener('submit', function(e) {
         data[key] = value;
     }
     
+    // Show submitting state immediately
+    const submitButton = form.querySelector('.submit-button');
+    submitButton.textContent = 'Submitting...';
+    submitButton.disabled = true;
+    
     // Google Apps Script URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyloAT9mlnH_NQYvtrz5wxSW1cafVg4X_3QOk79WIUWmWgD_M5RkefmcsBBcj1oyLX0/exec';
     
@@ -74,9 +79,17 @@ form.addEventListener('submit', function(e) {
             // Reset display for next time
             form.style.display = 'block';
             successMessage.style.display = 'none';
+            // Reset button
+            submitButton.textContent = 'Submit RSVP';
+            submitButton.disabled = false;
         }, 3000);
     })
-    .catch(error => console.error('Error!', error.message));
+    .catch(error => {
+        console.error('Error!', error.message);
+        // Reset button on error
+        submitButton.textContent = 'Submit RSVP';
+        submitButton.disabled = false;
+    });
 }); 
 
 document.addEventListener('DOMContentLoaded', function() {
